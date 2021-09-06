@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/newdata"
+            android:layout_width="42dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.3"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+
+            android:text="신규"
+            android:textStyle="normal">
+
+        </ImageView>
+
+        <RelativeLayout
+            android:layout_width="@dimen/pyeungsu_layout"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1">
+
+
+
+
+            <TextView
+                android:id="@+id/dayday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+
+                android:text="2021.8.21"
+                android:textSize="@dimen/pyeungsu_ymd_high"
+                android:textStyle="normal" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/price"
+            android:layout_width="@dimen/pyeungsu_layout"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <TextView
+
+                android:id="@+id/price1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="16억 5000"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/pyeungsu_price"
+                android:textStyle="bold" />
+
+            <TextView
+
+                android:id="@+id/price2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/price1"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="8dp"
+                android:padding="5dp"
+                android:textColor="@color/highprice_color"
+                android:textSize="13dp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/high"
+                android:layout_width="@dimen/pyeungsu_layout"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="7"
+                android:textSize="@dimen/pyeungsu_ymd_high"
+                android:textStyle="normal" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="@dimen/pyeungsu_layout"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/updown"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+            <ImageView
+                android:id="@+id/center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/center"
+                android:visibility="invisible"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                />
+
+            <TextView
+                android:id="@+id/updown_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/updown"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/pyeungsu_ymd_high"
+                android:textStyle="bold" />
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

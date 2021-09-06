@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="pyeungsu_layout">100dp</dimen>
+    <dimen name="pyeungsu_title">20dp</dimen>
+    <dimen name="pyeungsu_price">12dp</dimen>
+    <dimen name="pyeungsu_ymd_high">12dp</dimen>
+    <dimen name="pyeungsu_menusize">12dp</dimen>
+    <dimen name="drawer_text">20sp</dimen>
+    <dimen name="title_text">16sp</dimen>
+    <dimen name="bt_height">36dp</dimen>
+    <dimen name="row_top_margin">15dp</dimen>
+    <dimen name="row_left_margin">5dp</dimen>
+    <dimen name="charsize">14dp</dimen>
+    <dimen name="row_right_margin">5dp</dimen>
+    <dimen name="Linechartbtn">11dp</dimen>
+    <dimen name="maincardview">30dp</dimen>
+    <dimen name="row_bottom_margin">15dp</dimen>
+</resources>
