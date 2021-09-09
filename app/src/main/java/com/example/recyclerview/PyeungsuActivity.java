@@ -11,6 +11,9 @@ import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -58,19 +61,19 @@ public class PyeungsuActivity extends AppCompatActivity {
 
 
     public void init() {
-//        Gson gson = new GsonBuilder()
-//                .setLenient()
-//                .create();
-//        // GSON 컨버터를 사용하는 REST 어댑터 생성
-//        retrofit = new Retrofit.Builder()
-//                .baseUrl(BASE_URL)
-//                .addConverterFactory(GsonConverterFactory.create(gson))
-//                .build();
-
+        Gson gson = new GsonBuilder()
+                .setLenient()
+                .create();
+        // GSON 컨버터를 사용하는 REST 어댑터 생성
         retrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URL)
-                .addConverterFactory(GsonConverterFactory.create())
+                .addConverterFactory(GsonConverterFactory.create(gson))
                 .build();
+
+//        retrofit = new Retrofit.Builder()
+//                .baseUrl(BASE_URL)
+//                .addConverterFactory(GsonConverterFactory.create())
+//                .build();
     }
 
     public void findview() {
@@ -98,31 +101,19 @@ public class PyeungsuActivity extends AppCompatActivity {
                 for (BPyeungsuViewItem contributor : contributors) {
 
 
-                    String name = contributor.name;
+                    String ym = contributor.ym;
                     String price = contributor.price;
-                    String area = contributor.area;
-                    String year = contributor.year;
-                    String month = contributor.month;
-                    String day = contributor.day;
-                    String high = contributor.high;
-                    String doromyung = contributor.doromyung;
-                    String jibun = contributor.jibun;
-                    String geunmulcode = contributor.geunmulcode;
-                    String jiyeokcode = contributor.jiyeokcode;
-                    String bupjungdong = contributor.bupjungdong;
-                    String gunchukyear = contributor.gunchukyear;
-                    String today = contributor.today;
+
+                    String count = contributor.count;
 
 
-                    Log.e("dhxodn88", "" + name + " / " + price + " / " + area + " / " + year + "." + month + "." + day + " / " + high + " / " + doromyung + " / " + jibun + " / " +
-                            " / " + geunmulcode + " / " + jiyeokcode + " / " + bupjungdong + " / " + gunchukyear + " / " + today);
+
+                    Log.e("dhxodn88", "" + ym + " / " + price + " / " + count );
 
 
-                    month = month.replace(",", "");
 
-                    listViewItems.add(new BPyeungsuViewItem(name, price, area, year, month, day,
-                            high, doromyung, jibun, geunmulcode,
-                            jiyeokcode, bupjungdong, gunchukyear, today));
+
+                    listViewItems.add(new BPyeungsuViewItem(ym, price, count));
                     //Collections.sort(listViewItems);
                     recyclerViewAdapter.notifyDataSetChanged();
 

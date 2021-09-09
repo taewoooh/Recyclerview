@@ -13,7 +13,7 @@ interface GitHub {
 
     //@GET("/Information2.php")
     // @GET("/ilbyeol.php")
-    @GET("/Information_br.php")
+    @GET("/Dataset.php")
     // JSON Array를 리턴하므로 List<>가 되었다
     //Call<List<ListViewItem>> contributors(@Query("name") String naljja);
     Call<List<BPyeungsuViewItem>> contributors(@Query("name") String name,
