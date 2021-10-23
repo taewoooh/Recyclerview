@@ -1,8 +1,10 @@
 package com.example.recyclerview;
 
+import android.app.AlertDialog;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -29,17 +31,18 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class MainActivity extends AppCompatActivity {
     private final String BASE_URL = "https://taewoooh88.cafe24.com/";
     Retrofit retrofit;
-    RecyclerView recyclerView;
+    RecyclerView recyclerView,daydatarecyclerview;
     ArrayList<Daydatalistitem> listViewItems;
     LinearLayoutManager linearLayoutManager;
     Daydataadapter recyclerViewAdapter;
-
+    AlertDialog dialo;
+    AlertDialog.Builder dia;
     Button btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.pyeungsu_main);
+        setContentView(R.layout.activity_main);
         findview();
 
 
@@ -77,10 +80,7 @@ public class MainActivity extends AppCompatActivity {
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .build();
 
-//        retrofit = new Retrofit.Builder()
-//                .baseUrl(BASE_URL)
-//                .addConverterFactory(GsonConverterFactory.create())
-//                .build();
+
     }
 
     public void findview() {
@@ -89,16 +89,26 @@ public class MainActivity extends AppCompatActivity {
 
     }
     public void Daydata() { //
+        View inflate1 = LayoutInflater.from(MainActivity.this).inflate(R.layout.daydatajungbo, null, false);
 
-        recyclerView = findViewById(R.id.recyclerView);
+       // recyclerView = findViewById(R.id.recyclerView);
+        daydatarecyclerview = inflate1.findViewById(R.id.daydatarecyclerview);
+
         linearLayoutManager = new LinearLayoutManager(this);
 
-        recyclerView.addItemDecoration(
+        daydatarecyclerview.addItemDecoration(
                 new DividerItemDecoration(this,linearLayoutManager.getOrientation()));
-        recyclerView.setLayoutManager(linearLayoutManager);
+        daydatarecyclerview.setLayoutManager(linearLayoutManager);
         recyclerViewAdapter = new Daydataadapter(this,listViewItems);
-        recyclerView.setAdapter(recyclerViewAdapter);
+        daydatarecyclerview.setAdapter(recyclerViewAdapter);
 
+        dia = new AlertDialog.Builder(this, android.R.style.Theme_DeviceDefault_Light_Dialog_Alert);
+
+        dia.setView(inflate1);
+
+        dialo = dia.create();
+
+        dialo.show();
         DaydataTongsin("20211023");
 
     }
