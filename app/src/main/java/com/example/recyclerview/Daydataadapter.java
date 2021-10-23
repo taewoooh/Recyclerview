@@ -3,6 +3,7 @@ package com.example.recyclerview;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -38,6 +39,15 @@ public class Daydataadapter extends RecyclerView.Adapter<Daydataadapter.ViewHold
         holder.singoga.setText(String.valueOf(item.getSingoga()));
         holder.singogayul.setText(String.valueOf(item.getSingogayul()));
 
+
+        if (item.getSingogayul() >= 60){
+
+            holder.fire.setVisibility(View.VISIBLE);
+        }else {
+
+            holder.fire.setVisibility(View.GONE);
+        }
+
     }
 
 
@@ -49,6 +59,7 @@ public class Daydataadapter extends RecyclerView.Adapter<Daydataadapter.ViewHold
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         TextView jiyeokname,total,singoga,singogayul;
+        ImageView fire;
 
 
         public ViewHolder(@NonNull View itemView) {
@@ -59,6 +70,7 @@ public class Daydataadapter extends RecyclerView.Adapter<Daydataadapter.ViewHold
             total = itemView.findViewById(R.id.total);
             singoga = itemView.findViewById(R.id.singoga);
             singogayul = itemView.findViewById(R.id.singogayul);
+            fire = itemView.findViewById(R.id.fire);
 
 
 
