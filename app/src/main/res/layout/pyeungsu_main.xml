@@ -4,13 +4,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PyeungsuActivity">
+    tools:context=".MainActivity">
 
+
+    <Button
+        android:id="@+id/btn"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:text="버튼"
+        android:background="@android:color/darker_gray"
+        android:textColor="@color/black"
+        android:layout_centerHorizontal="true">
+
+
+
+    </Button>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@+id/btn"
 
         android:layout_centerHorizontal="true" />
 

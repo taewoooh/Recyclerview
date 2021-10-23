@@ -15,4 +15,6 @@
     <dimen name="Linechartbtn">11dp</dimen>
     <dimen name="maincardview">30dp</dimen>
     <dimen name="row_bottom_margin">15dp</dimen>
+    <dimen name="daydatalist">100dp</dimen>
+    <dimen name="pyeugnsuselect">14dp</dimen>
 </resources>
